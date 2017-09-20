@@ -43,13 +43,14 @@
                 <param name="android-package" value="com.arttitude360.cordova.PaystackPlugin" />
             </feature>
         </config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="application">
+            <meta-data android:name="co.paystack.android.PublishableKey" android:value="pk_live_4b0351aff24d986fce5c0e5a111540b26e9fea9b"/>
+        </config-file>
 
         <source-file src="src/android/PaystackPlugin.java" target-dir="src/com/arttitude360/cordova" />
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
 
     </platform>
-
-    <!-- dependency to set publishable key -->
-    <dependency id="cordova-custom-config" url="https://github.com/dpa99c/cordova-custom-config.git"  />
 
 </plugin>
