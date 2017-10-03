@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-paystack"
     version="3.1.0">
@@ -18,7 +17,23 @@
         <clobbers target="window.PaystackPlugin" />
     </js-module>
 
-    <!-- ios -->
+    <platform name="android">
+
+        <config-file parent="/*" target="res/xml/config.xml">
+			<feature name="PaystackPlugin">
+                <param name="android-package" value="com.arttitude360.cordova.PaystackPlugin" />
+            </feature>
+		</config-file>
+
+		<config-file parent="/*" target="AndroidManifest.xml">
+            <meta-data android:name="co.paystack.android.PublicKey" android:value="pk_live_4b0351aff24d986fce5c0e5a111540b26e9fea9b" />
+        </config-file>
+
+
+        <source-file src="src/android/PaystackPlugin.java" target-dir="src/com/arttitude360/cordova" />
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+    </platform>
+    
     <platform name="ios">
 
         <config-file target="config.xml" parent="/*">
@@ -31,21 +46,6 @@
         <source-file src="src/ios/PaystackPlugin.m" />
 
         <framework src="src/ios/Paystack.framework" custom="true" />
-        
-
-    </platform>
-
-    <!-- android -->
-    <platform name="android">
-
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="PaystackPlugin">
-                <param name="android-package" value="com.arttitude360.cordova.PaystackPlugin" />
-            </feature>
-        </config-file>
-
-        <source-file src="src/android/PaystackPlugin.java" target-dir="src/com/arttitude360/cordova" />
-        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
 
     </platform>
 
