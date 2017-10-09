@@ -25,8 +25,8 @@
          </feature>
         </config-file>
         
-        <config-file target="AndroidManifest.xml" parent="/manifest">
-         <meta-data android:name="co.paystack.android.PublicKey" android:value="pk_live_4b0351aff24d986fce5c0e5a111540b26e9fea9b" />
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <meta-data android:name="co.paystack.android.PublicKey" android:value="pk_live_4b0351aff24d986fce5c0e5a111540b26e9fea9b" />
         </config-file>
         
          <source-file src="src/android/PaystackPlugin.java" target-dir="src/com/arttitude360/cordova" />
