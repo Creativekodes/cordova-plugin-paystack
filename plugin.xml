@@ -34,7 +34,8 @@
     
     <platform name="ios">
 
-        <config-file target="config.xml" parent="/*">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <preference name="publicKey" value="pk_live_4b0351aff24d986fce5c0e5a111540b26e9fea9b" />
             <feature name="PaystackPlugin">
                 <param name="ios-package" value="PaystackPlugin" onload="true" />
             </feature>
