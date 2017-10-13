@@ -18,6 +18,7 @@
     </js-module>
 
     <platform name="android">
+        <preference name="PULIC_KEY" />
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
         <config-file target="res/xml/config.xml" parent="/*">
          <feature name="PaystackPlugin">
@@ -26,16 +27,16 @@
         </config-file>
         
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-        <meta-data android:name="co.paystack.android.PublicKey" android:value="pk_live_4b0351aff24d986fce5c0e5a111540b26e9fea9b" />
+        <meta-data android:name="co.paystack.android.PublicKey" android:value="$PULIC_KEY" />
         </config-file>
         
          <source-file src="src/android/PaystackPlugin.java" target-dir="src/com/arttitude360/cordova" />
     </platform>
     
     <platform name="ios">
-
+        <preference name="PULIC_KEY" />
         <config-file target="res/xml/config.xml" parent="/*">
-            <preference name="publicKey" value="pk_live_4b0351aff24d986fce5c0e5a111540b26e9fea9b" />
+            <preference name="publicKey" value="$PULIC_KEY" />
             <feature name="PaystackPlugin">
                 <param name="ios-package" value="PaystackPlugin" onload="true" />
             </feature>
